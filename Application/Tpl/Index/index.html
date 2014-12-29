@@ -1,0 +1,47 @@
+﻿<extend name="base" />
+<block name="left">
+    <volist name="model" id="item">
+        <div>
+        <a href="ms2a?ms={$item.id}">
+            <img src="{$item.image}" style="height: 200px; width: 100px;" />
+        </a>
+        </div>
+        <div>
+            <button data-id="{$item.id}" class="read">开始阅读</button>
+        </div>
+    </volist>
+</block>
+<block name="right">
+    <div style="width: 200px; float: left;">
+        <div>
+            杂志信息</div>
+        <div>
+            <a href="ms2a?ms={$model[0].id}">
+                <img src="{$model[0].image}" style="height: 200px; width: 100px;" />
+            </a>
+        </div>
+        <div>
+            {$model[0].description}
+        </div>
+        <div style="margin-top: 10px;">
+            <button data-id="{$model[0].id}" class="read">
+                开始阅读</button>
+        </div>
+    </div>
+    <div style="float: left; text-align: center; width: 352px;">
+    <volist name="magazines" id="item">
+        <div class="nlist">
+            <a href="m2a?mid={$item.id}">第{$item.index}期 - {$item.title}</a>
+        </div>
+    </volist>
+    </div>
+</block>
+<block name="script">
+    <script type="text/javascript">
+        $("document").ready(function () {
+            $(".read").click(function () {
+                window.location.href = "ms2a?ms=" + $(this).data("id");
+            });
+        });
+    </script>
+</block>

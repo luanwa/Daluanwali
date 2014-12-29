@@ -1,0 +1,42 @@
+﻿<extend name="base" />
+<block name="left">
+    <div style="min-height: 400px;">
+        <div class="title">
+            目录
+        </div>
+        <volist name="articles" id="item">
+            <div class="nlist">
+                <a href="read?id={$item.id}"><empty name="item.title">打乱哇里<else />{$item.title}</empty> - {$item.author}</a>
+            </div>
+        </volist>
+    </div>
+</block>
+<block name="right">
+    <div id="user-info" style="margin-bottom: 20px;">
+        <div>
+            <img src="{$user.image}" style="height: 100px; width: 100px; float:left;" />
+        </div>
+        <div style="margin-left: 20px; float: left;">
+            <div style="margin-top: 15px;">
+                {$user.truename}
+            </div>
+            <div style="margin-top: 15px;">
+                {$user.description}
+            </div>
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+    <div class="title">
+        {$model.title}
+    </div>
+    <div style="margin-bottom: 50px;">
+        {$model.content}
+    </div>
+    <!-- UY BEGIN -->
+    <div id="uyan_frame"></div>
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1601419"></script>
+    <!-- UY END -->
+</block>
+<block name="script">
+
+</block>

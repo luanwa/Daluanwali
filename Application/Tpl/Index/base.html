@@ -1,0 +1,64 @@
+﻿<extend name="base" />
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>打乱哇里</title>
+    <style>
+        body
+        {
+            font-family: arial, 'Hiragino Sans GB' , 'Microsoft Yahei' , '微软雅黑' , '宋体' , \5b8b\4f53, Tahoma, Arial, Helvetica, STHeiti;
+            width: 998px;
+            margin: auto;
+        }
+        .nlist
+        {
+            margin: 5px 0;
+        }
+        .title
+        {
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 20px;
+        }
+        A:link
+        {
+            color: #000000;
+            text-decoration: none;
+        }
+        A:visited
+        {
+            color: #000000;
+            text-decoration: none;
+        }
+        A:hover
+        {
+            color: #ff7f24;
+            text-decoration: underline;
+        }
+        A:active
+        {
+            color: #ff7f24;
+            text-decoration: underline;
+        }
+    </style>
+    <script src="/js/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+    <div style="height: 60px; margin-top: 50px;">
+        <a href="/">
+            <img alt="logo" src="/img/logo.jpg" style="height: 50px; width=50px;" /></a>
+    </div>
+    <div style="width: 367px; float: left; padding: 10px; border: 1px solid #ddd; margin-right: 30px;">
+        <block name="left"></block>
+    </div>
+    <div style="width: 557px; float: left; padding: 10px; border: 1px solid #ddd;">
+        <block name="right"></block>
+    </div>
+    <div style="clear: both;">
+    </div>
+    <center style="margin: 40px 0;">
+        关于我们 | 联系我们 | 意见反馈
+    </center>
+    <block name="script"></block>
+</body>
+</html>
