@@ -1,0 +1,25 @@
+
+.img-txt:before,
+.img-txt:after {
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+.img-txt:after {clear: both;}
+.img-txt {zoom: 1;}
+.img-txt .img {float:left;margin-right:10px;_margin-right:7px;}
+.img-txt .txt {
+    display:table-cell;
+    #zoom:1;
+}
+.img-txt .txt:after {
+    clear: both;
+    display: block;
+    visibility: visible;
+    overflow: hidden;
+    height: 0 !important;
+    line-height: 0;
+    font-size: xx-large;
+    content: " x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x ";
+}
