@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+
+    <link href="./libs/bootstrap-dist/css/bootstrap.min.css">
+    <script src="./js/jquery-1.10.2.min.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./libs/bootstrap-dist/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet/less" href="./style/index.less">
+
+    <script>
+        less = {
+            env: "development",
+            async: false,
+            fileAsync: false,
+            poll: 1000,
+            functions: {},
+            dumpLineNumbers: "comments",
+            relativeUrls: false,
+            rootpath: ":/a.com/"
+        };
+    </script>
+    <script src="./node_modules/less/dist/less.min.js"></script>
+</head>
+<body>
+<div id="page_wrapper">
+    <div id="main_page">
+        <div id="header_area" class="standard_width"></div>
+        <div id="content_area" class="standard_width">
+            <div id="left_banner">
+                <div id="left_banner_area">
+                    <div id="welcome_banner">
+                        <div class="welcome_banner_option login_step lractions active" id="login_option_banner">
+                            <p>欢迎来到这个新世界，我们爱你么么哒！~</p>
+                            <p>看文章请先登录~</p>
+                        </div>
+                        <div class="welcome_banner_option register_step lractions" id="register_option_banner">
+                            <p>欢迎来到这个新世界，我们爱你么么哒！~</p>
+                            <p>请填写邮箱并注册。</p>
+                        </div>
+                        <div class="welcome_banner_option register_step2 lractions" id="register_step2_banner">
+                            <p>欢迎来到这个新世界，我们爱你么么哒！~</p>
+                            <p>填写简单的资料就可以开始看文章了~</p>
+                        </div>
+                    </div>
+                    <div class="minor_clear_divider"></div>
+                    <div id="welcome_img"></div>
+                </div>
+            </div>
+            <div id="right_banner">
+                <div id="right_banner_area">
+                    <div id="register_banner_area">
+                        <span>
+                            <a id="switch_to_login_btn" class="login_btn_grp hilite_btn big" href="#">登录</a>
+                            <a id="switch_to_register_btn" class="login_btn_grp slight_btn big" href="#">注册</a>
+                        </span>
+                    </div>
+                    <div id="register_form_area">
+                        <div class="lrform register_step lractions" id="register_form">
+                            <div class="form_item">
+                                <div class="form_title_area">
+                                    <span>邮箱：</span>
+                                </div>
+                                <div class="form_content_area">
+                                    <input id="register_mail" type="text">
+                                    <div class="input_hint_area" id="register_email_hint">Please fill in legal email address</div>
+                                </div>
+                            </div>
+                            <div class="form_item">
+                                <div class="form_title_area">
+                                    <span>密码：</span>
+                                </div>
+                                <div class="form_content_area">
+                                    <input id="register_pwd" type="password">
+                                    <div class="input_hint_area" id="register_password_hint">Please fill in legal password</div>
+                                </div>
+                            </div>
+                            <div class="form_item">
+                                <div class="form_title_area">
+                                    <span>确认密码：</span>
+                                </div>
+                                <div class="form_content_area">
+                                    <input id="register_pwd_again" type="password">
+                                    <div class="input_hint_area" id="register_password_step2_hint">Please fill in the same password!</div>
+                                </div>
+                            </div>
+                            <div class="form_item">
+                                <div class="form_action_button">
+                                    <button type="button" id="register_next_btn">下一步</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lrform register_step2 lractions" id="register_form_step2">
+                            <div class="form_item">
+                                <div class="form_title_area">
+                                    <span>昵称：</span>
+                                </div>
+                                <div class="form_content_area">
+                                    <input id="register_nickname" type="text">
+                                    <div class="input_hint_area" id="register_nickname_hint">Please fill in the email field!</div>
+                                </div>
+                            </div>
+                            <div class="form_item">
+                                <div class="form_title_area">
+                                    <span>性别：</span>
+                                </div>
+                                <div class="form_content_area">
+                                    <input id="register_sex" type="text">
+                                    <div class="input_hint_area" id="register_sex_hint">Please fill in the email field!</div>
+                                </div>
+                            </div>
+                            <div class="form_item">
+                                <div class="form_title_area">
+                                    <span>个人简介：</span>
+                                </div>
+                                <div class="form_content_area">
+                                    <input id="register_brief" type="text">
+                                    <div class="input_hint_area" id="register_brief_hint">Please fill in the email field!</div>
+                                </div>
+                            </div>
+                            <div class="form_item">
+                                <div class="form_action_button">
+                                    <button type="button" id="submit_btn">注册</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lrform login_step lractions active" id="login_form">
+                            <div class="form_item">
+                                <div class="form_title_area">
+                                    <span>邮箱/昵称：</span>
+                                </div>
+                                <div class="form_content_area">
+                                    <input id="login_mail" type="text">
+                                    <div class="input_hint_area" id="login_email_hint">Please fill in the email field!</div>
+                                </div>
+                            </div>
+                            <div class="form_item">
+                                <div class="form_title_area">
+                                    <span>密码：</span>
+                                </div>
+                                <div class="form_content_area">
+                                    <input id="login_pwd" type="password">
+                                    <div class="input_hint_area" id="login_password_hint">Please fill in the email field!</div>
+                                </div>
+                            </div>
+                            <div class="form_item">
+                                <div class="form_action_button">
+                                    <button type="button" id="login_action_btn">登录</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer_area" class="standard_width">
+            <div class="bottom_btn_wrapper">
+                <span class="bottom_btn">我要投稿</span>
+            </div>
+            <div class="bottom_btn_wrapper">
+                <span class="bottom_btn">关于我们</span>
+            </div>
+            <div class="bottom_btn_wrapper">
+                <span class="bottom_btn">联系我们</span>
+            </div>
+            <div class="bottom_btn_wrapper">
+                <span class="bottom_btn">意见反馈</span>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
