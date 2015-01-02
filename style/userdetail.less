@@ -1,0 +1,79 @@
+@import "page";
+
+@tabs_width: 140px;
+@form_item_height: 30px;
+
+#user_banner_area{
+  height: 120px;
+  width: 100%;
+  margin-bottom: 30px;
+
+  #user_avatar_area{
+    height: 100%;
+    width: 120px;
+    background-color: gray;
+  }
+}
+
+
+.form_item{
+  width: 360px;
+  min-width: 200px;
+  height: @form_item_height;
+  margin-bottom: 30px;
+}
+
+.form_title_area{
+  width: 40%;
+  height: @form_item_height;
+  float: left;
+  text-align: right;
+  vertical-align: middle;
+  line-height: @form_item_height;
+  overflow: hidden;
+}
+
+.form_content_area{
+  width: 60%;
+  height: @form_item_height;
+  float: left;
+  vertical-align: middle;
+  line-height: @form_item_height;
+  overflow: hidden;
+  position: relative;
+}
+
+.form_action_button{
+  margin-left: 40%;
+  line-height: @form_item_height;
+}
+
+#user_content_area{
+  width: 100%;
+
+  #tabs_wrapper{
+    width: @tabs_width;
+    position: relative;
+    float: left;
+  }
+
+  #tabs_content_wrapper{
+    position: relative;
+    margin-left: @tabs_width;
+    width: auto;
+    overflow: hidden;
+
+    height: 400px;
+
+    #my_profile_content{
+      input{
+        height: 28px;
+        line-height: 28px;
+      }
+    }
+
+    #my_likes_content{
+      height: 200px;
+    }
+  }
+}

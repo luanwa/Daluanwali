@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <link rel="stylesheet" href="./libs/bootstrap-dist/css/bootstrap.css">
+    <script src="./js/jquery-1.10.2.min.js"></script>
+    <script src="./js/userdetail.js"></script>
+    <script src="./libs/bootstrap-dist/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet/less" href="./style/userdetail.less">
+
+    <script>
+        less = {
+
+            env: "development",
+            async: false,
+            fileAsync: false,
+            poll: 1000,
+            functions: {},
+            dumpLineNumbers: "comments",
+            relativeUrls: false,
+            rootpath: ":/a.com/"
+        };
+        var showing_comment = 0;
+    </script>
+    <script src="./node_modules/less/dist/less.min.js"></script>
+</head>
+<body>
+
+<div id="page_wrapper">
+    <div id="main_page">
+        <div id="header_area" class="standard_width"></div>
+        <div id="content_area" class="standard_width">
+            <div id="main_page_content" class="user_detail_page_wrapper displayed">
+                <div id="user_banner_area">
+                    <div id="user_avatar_area"></div>
+                </div>
+                <div id="user_content_area">
+                    <div id="tabs_wrapper">
+                        <ul class="nav nav-pills nav-stacked" role="tablist">
+                            <li role="presentation" class="active">
+                                <a aria-expanded="true" role="tab" data-toggle="tab" id="myprofile_tab" href="#myprofile">Profile</a>
+                            </li>
+                            <li role="presentation" class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <span>My Likes</span> <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li role="presentation">
+                                        <a aria-expanded="true" role="tab" data-toggle="tab" id="my_comments_tab" href="#my_comments">Comments</a>
+                                    </li>
+                                    <li role="presentation">
+                                        <a aria-expanded="true" role="tab" data-toggle="tab" id="fav_magazines_tab" href="#fav_maga">Favourites</a>
+                                    </li>
+                                    <li role="presentation">
+                                        <a aria-expanded="true" role="tab" data-toggle="tab" id="followings_tab" href="#my_followings">Followings</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li role="presentation">
+                                <a aria-expanded="true" role="tab" data-toggle="tab" id="mypms_tab" href="#mypms">Messages</a>
+                            </li>
+                            <li role="presentation">
+                                <a aria-expanded="true" role="tab" data-toggle="tab" id="myactivities_tab" href="#myactivities">Activities</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="tabs_content_wrapper" class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade active in" id="myprofile" aria-labelledby="myprofile_tab">
+                            <div id="my_profile_content">
+                                <div class="form_item">
+                                    <div class="form_title_area">
+                                        <span>昵称：</span>
+                                    </div>
+                                    <div class="form_content_area">
+                                        <input id="register_nickname" type="text">
+
+                                        <div class="input_hint_area" id="register_nickname_hint">Please fill in the
+                                            email field!
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form_item">
+                                    <div class="form_title_area">
+                                        <span>性别：</span>
+                                    </div>
+                                    <div class="form_content_area">
+                                        <input id="register_sex" type="text">
+
+                                        <div class="input_hint_area" id="register_sex_hint">Please fill in the email
+                                            field!
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form_item">
+                                    <div class="form_title_area">
+                                        <span>个人简介：</span>
+                                    </div>
+                                    <div class="form_content_area">
+                                        <input id="register_brief" type="text">
+
+                                        <div class="input_hint_area" id="register_brief_hint">Please fill in the email
+                                            field!
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form_item">
+                                    <div class="form_action_button">
+                                        <button type="button" id="update_button">更新</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="my_comments" aria-labelledby="my_comments_tab">
+                            <div id="my_comments_tab_content"></div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="fav_maga" aria-labelledby="fav_magazines_tab">
+                            <div id="my_fav_maga_tab_content"></div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="my_followings" aria-labelledby="followings_tab">
+                            <div id="my_followings_content"></div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="mypms" aria-labelledby="mypms_tab">
+                            <div id="my_pms_content"></div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="myactivities" aria-labelledby="myactivities_tab">
+                            <div id="my_activities_content"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer_area" class="standard_width">
+            <div class="bottom_btn_wrapper">
+                <span class="bottom_btn">我要投稿</span>
+            </div>
+            <div class="bottom_btn_wrapper">
+                <span class="bottom_btn">关于我们</span>
+            </div>
+            <div class="bottom_btn_wrapper">
+                <span class="bottom_btn">联系我们</span>
+            </div>
+            <div class="bottom_btn_wrapper">
+                <span class="bottom_btn">意见反馈</span>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
