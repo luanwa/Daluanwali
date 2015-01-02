@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Detail</title>
+
+    <link rel="stylesheet" href="./libs/bootstrap-dist/css/bootstrap.css">
+    <script src="./js/jquery-1.10.2.min.js"></script>
+    <script src="./js/detail.js"></script>
+    <script src="./libs/bootstrap-dist/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet/less" href="./style/detail.less">
+
+    <script>
+        less = {
+
+            env: "development",
+            async: false,
+            fileAsync: false,
+            poll: 1000,
+            functions: {},
+            dumpLineNumbers: "comments",
+            relativeUrls: false,
+            rootpath: ":/a.com/"
+        };
+        var showing_comment = 0;
+    </script>
+    <script src="./node_modules/less/dist/less.min.js"></script>
+
+</head>
+<body>
+
+<div id="page_wrapper">
+    <div id="main_page">
+        <div id="header_area" class="standard_width"></div>
+        <div id="content_area" class="standard_width">
+            <div id="main_page_content" class="maga_detail_content_wrapper displayed">
+                <div id="contents_list_wrapper">
+                    <div id="table_of_contents"></div>
+                    <div class="btn_wrapper" id="subscribe_now">
+                        <span class="wrapped_btn">订阅杂志</span>
+                    </div>
+                    <div class="btn_wrapper" id="contribute_now">
+                        <span class="wrapped_btn">我要投稿</span>
+                    </div>
+                </div>
+                <div id="article_detail_wrapper">
+                    <div id="article_window">
+                        <div id="author_area">
+                            <div id="author_avatar_area"></div>
+                            <div id="author_brief_area">
+                                <div id="author_nickname">
+                                    <span id="nickname">Nickname</span>
+                                </div>
+                                <div id="author_o_brief">
+                                    <span>Author Brief</span>
+                                </div>
+                                <div id="pm_btn_wrapper" class="btn_wrapper">
+                                    <span class="wrapped_btn">PM</span>
+                                </div>
+                                <div id="follow_btn_wrapper" class="btn_wrapper">
+                                    <span class="wrapped_btn">Follow</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="article_content"></div>
+                        <div id="comments_area">
+                            <div class="no_comments_hint">
+                                <span>No comments currently.</span>
+                            </div>
+                        </div>
+                        <div id="comment_now_area">
+                            <div id="comment_btn_wrapper" class="btn_wrapper">
+                                <span class="wrapped_btn">评论</span>
+                            </div>
+                            <div id="like_btn_wrapper" class="btn_wrapper">
+                                <span class="wrapped_btn">喜欢</span>
+                            </div>
+                            <div id="cancel_comment_btn_wrapper" class="btn_wrapper">
+                                <span class="wrapped_btn">取消</span>
+                            </div>
+                            <div id="placeholder_1"></div>
+                            <div id="comment_form_area">
+                                <textarea id="comment_content" draggable="false"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer_area" class="standard_width">
+            <div class="bottom_btn_wrapper">
+                <span class="bottom_btn">我要投稿</span>
+            </div>
+            <div class="bottom_btn_wrapper">
+                <span class="bottom_btn">关于我们</span>
+            </div>
+            <div class="bottom_btn_wrapper">
+                <span class="bottom_btn">联系我们</span>
+            </div>
+            <div class="bottom_btn_wrapper">
+                <span class="bottom_btn">意见反馈</span>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
