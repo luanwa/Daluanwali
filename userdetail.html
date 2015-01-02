@@ -13,7 +13,6 @@
 
     <script>
         less = {
-
             env: "development",
             async: false,
             fileAsync: false,
@@ -31,7 +30,11 @@
 
 <div id="page_wrapper">
     <div id="main_page">
-        <div id="header_area" class="standard_width"></div>
+        <div id="header_area" class="standard_width">
+            <div id="logo_area">
+                <a href="./index.html" class="bottom_btn">LOGO</a>
+            </div>
+        </div>
         <div id="content_area" class="standard_width">
             <div id="main_page_content" class="user_detail_page_wrapper displayed">
                 <div id="user_banner_area">
@@ -145,6 +148,18 @@
             <div class="bottom_btn_wrapper">
                 <span class="bottom_btn">意见反馈</span>
             </div>
+        </div>
+        <div id="user_center_area">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"></button>
+            <ul id="user_popup" class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="./userdetail.html">My Mainpage</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="./userdetail.html#my_comments">My Likes</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="./userdetail.html#myactivities">Activities</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="./userdetail.html#mypms">PMs</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Help</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Logout</a></li>
+            </ul>
+            <div id="user_pm_badge"></div>
         </div>
     </div>
 </div>

@@ -1,5 +1,6 @@
 @standard_width: 1168px;
 @grid-gutter-width: 30px;
+@user_popup_width: 190px;
 
 .fullCover(){
   display: block;
@@ -156,6 +157,8 @@ div#page_wrapper{
   height: 60px;
   margin-top: 50px;
   margin-bottom: 20px;
+  position: relative;
+  overflow: visible;
 }
 
 #footer_area{
@@ -212,6 +215,7 @@ div#page_wrapper{
 
 .bottom_btn{
   border: 1px gray solid;
+  .roundedCorners(3px);
   height: 100%;
   width: 120px;
   display: block;
@@ -230,6 +234,7 @@ div#page_wrapper{
 
   .wrapped_btn{
     border: 1px gray solid;
+    .roundedCorners(3px);
     height: 100%;
     display: block;
     margin: auto;
@@ -239,4 +244,42 @@ div#page_wrapper{
   .wrapped_btn:hover{
     cursor: pointer;
   }
+}
+
+#logo_area{
+  width: 120px;
+  height: 30px;
+  float: left;
+  text-align: center;
+}
+
+#user_center_area{
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+
+  #dropdownMenu1{
+    width: 60px;
+    height: 60px;
+    .roundedCorners(30px);
+  }
+
+  #user_pm_badge{
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  #user_popup{
+    width: @user_popup_width;
+    margin-left: -@user_popup_width - 20px;
+    z-index: 100;
+    position: absolute;
+    top: 0;
+  }
+
 }
