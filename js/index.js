@@ -6,14 +6,14 @@ var kGoToLoginRegister = "登录/注册";
 
 $(document).ready(function () {
     $('#switch_to_login_btn').click(function () {
-        $('.lractions').removeClass('active');
-        $('.login_step').addClass("active");
+        $('.lractions').removeClass('displayed');
+        $('.login_step').addClass("displayed");
         $('.login_btn_grp').removeClass("slight_btn").removeClass("hilite_btn");
         $(this).removeClass("slight_btn").addClass("hilite_btn");
     });
     $('#switch_to_register_btn').click(function () {
-        $('.lractions').removeClass('active');
-        $('.register_step').addClass("active");
+        $('.lractions').removeClass('displayed');
+        $('.register_step').addClass("displayed");
         $('.login_btn_grp').removeClass("slight_btn").removeClass("hilite_btn");
         $(this).removeClass("slight_btn").addClass("hilite_btn");
     });
@@ -31,15 +31,15 @@ $(document).ready(function () {
         if(showing === 1){
             //change to login
             showing = 2;
-            $('#header_btn_wrapper span').html(kGoToLoginRegister);
-            $('.main_page_content_wrapper').removeClass("active");
-            $('#login_register_page_content').addClass("active");
+            $('#header_btn_wrapper span').html(kReturnToIndexTitle);
+            $('.main_page_content_wrapper').removeClass("displayed");
+            $('#login_register_page_content').addClass("displayed");
         }else{
             //change to first: 0
             showing = 1;
-            $('#header_btn_wrapper span').html(kReturnToIndexTitle);
-            $('.main_page_content_wrapper').removeClass("active");
-            $('#main_page_content').addClass("active");
+            $('#header_btn_wrapper span').html(kGoToLoginRegister);
+            $('.main_page_content_wrapper').removeClass("displayed");
+            $('#main_page_content').addClass("displayed");
         }
     });
 });

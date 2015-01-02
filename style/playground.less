@@ -1,0 +1,212 @@
+@import "page";
+
+@left_content_width: 550px;
+@tab_height: 42px;
+@magazine_brief_width: 160px;
+
+#mag_list_wrapper{
+  height: 600px;
+  width: @left_content_width;
+  border: 1px gray solid;
+  position: relative;
+  float: left;
+
+  #mag_list_content_wrapper{
+    padding: 40px 40px 80px 40px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+//    overflow-x: hidden;
+//    overflow-y: scroll;
+
+    .maga_item{
+      width: 165px;
+      float: left;
+      height: 180px;
+      position: relative;
+
+      .maga_item_cover{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 140px;
+        width: 124px;
+        background-color: gray;
+      }
+
+      .subscribe_maga_btn_wrapper{
+        height: 22px;
+        width: 46px;
+        line-height: 22px;
+        position: absolute;
+        left: 0;
+        top: 150px;
+        font-size: 12px;
+      }
+
+      .begin_reading_btn_wrapper{
+        height: 22px;
+        width: 70px;
+        line-height: 22px;
+        position: absolute;
+        left: 54px;
+        top: 150px;
+        font-size: 12px;
+      }
+
+      .wrapped_btn{
+        line-height: 22px;
+      }
+    }
+  }
+
+  #start_my_magazine_btn_wrapper{
+    position: absolute;
+    bottom: 20px;
+    right: 40px;
+    width: 140px;
+    height: 30px;
+    
+    .btn_wrapper{
+      height: 100%;
+
+      .wrapped_btn{
+        line-height: 30px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+#magop_wrapper{
+  position: relative;
+  margin-left: @left_content_width;
+  height: 600px;
+  width: auto;
+}
+
+#playground_tabs_div{
+  position: relative;
+  height: 100%;
+  margin-left: 20px;
+}
+
+#playground_op_tab{
+  height: @tab_height;
+}
+
+#playground_tab_contents_wrapper{
+  position: absolute;
+  top: @tab_height;
+  width: 100%;
+  bottom: 0;
+  border-left: 1px solid #DDD;
+  border-right: 1px solid #DDD;
+  border-bottom: 1px solid #DDD;
+  .roundedCorners(3px);
+}
+
+#announcements{
+  width: 100%;
+  height: 100%;
+
+  #announcements_tab_content{
+    width: 100%;
+    height: 100%;
+  }
+}
+
+#mag_detail{
+  width: 100%;
+  height: 100%;
+
+  #magzine_detail_tab_content{
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    #magazine_brief_area{
+      width: @magazine_brief_width;
+      left: 0;
+      position: absolute;
+      height: 100%;
+
+      #magazine_cover_wrapper{
+        width: 110px;
+        height: 140px;
+        position: absolute;
+        left: 40px;
+        top: 40px;
+        background-color: #F0F;
+      }
+
+      #magazine_brief_text{
+        width: 110px;
+        height: 100px;
+        position: absolute;
+        top: 210px;
+        left: 40px;
+        background-color: #333;
+        overflow: hidden;
+
+        #magazine_brief_container{
+          word-break: break-all;
+        }
+      }
+
+      #begin_read_button_wrapper{
+        height: 30px;
+        width: 120px;
+        margin: auto;
+        position: absolute;
+        bottom: 20px;
+        right: 0;
+
+        .wrapped_btn{
+          line-height: 30px;
+        }
+      }
+    }
+
+    #magazine_historical_list{
+      position: absolute;
+      left: @magazine_brief_width;
+      height: 100%;
+      right: 0;
+      overflow: hidden;
+
+      #onemaga_paging_list_content{
+        width: 100%;
+        height: 360px;
+        padding-left: 30px;
+        padding-right: 30px;
+        margin-top: 40px;
+
+        .maga_vol_item{
+          width: 100%;
+          height: 30px;
+          margin-top: 20px;
+
+          .btn_wrapper{
+            height: 30px;
+
+            .wrapped_btn{
+              line-height: 30px;
+            }
+          }
+        }
+      }
+
+      div nav{
+        text-align: center;
+
+        #paging_list{
+          margin: auto;
+        }
+      }
+    }
+  }
+}

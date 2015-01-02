@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Playground</title>
+
+    <link rel="stylesheet" href="./libs/bootstrap-dist/css/bootstrap.css">
+    <script src="./js/jquery-1.10.2.min.js"></script>
+    <script src="./js/playground.js"></script>
+    <script src="./libs/bootstrap-dist/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet/less" href="./style/playground.less">
+
+    <script>
+        less = {
+            env: "development",
+            async: false,
+            fileAsync: false,
+            poll: 1000,
+            functions: {},
+            dumpLineNumbers: "comments",
+            relativeUrls: false,
+            rootpath: ":/a.com/"
+        };
+        var showing = 1;
+    </script>
+    <script src="./node_modules/less/dist/less.min.js"></script>
+
+</head>
+<body>
+
+<div id="page_wrapper">
+    <div id="main_page">
+        <div id="header_area" class="standard_width"></div>
+        <div id="content_area" class="standard_width">
+            <div id="main_page_content" class="playground_page_content_wrapper displayed">
+                <div id="mag_list_wrapper">
+                    <div id="mag_list_content_wrapper">
+                        <div class="maga_item">
+                            <div class="maga_item_cover"></div>
+                            <div class="subscribe_maga_btn_wrapper btn_wrapper">
+                                <span class="wrapped_btn">订阅</span>
+                            </div>
+                            <div class="begin_reading_btn_wrapper btn_wrapper">
+                                <span class="wrapped_btn">开始阅读</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="start_my_magazine_btn_wrapper">
+                        <div class="btn_wrapper">
+                            <span class="wrapped_btn">我也要发起杂志</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="magop_wrapper">
+                    <div id="playground_tabs_div">
+                        <ul id="playground_op_tab" class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active">
+                                <a aria-expanded="true" role="tab" data-toggle="tab" id="announcements_tab" href="#announcements">Announcements</a>
+                            </li>
+                            <li role="presentation">
+                                <a aria-expanded="false" role="tab" data-toggle="tab" id="magazine_detail_tab" href="#mag_detail">Detail</a>
+                            </li>
+                        </ul>
+                        <div id="playground_tab_contents_wrapper" class="tab-content">
+                            <div role="tabpanel" class="tab-pane fade active in" id="announcements" aria-labelledby="announcements_tab">
+                                <div id="announcements_tab_content"></div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="mag_detail" aria-labelledby="magazine_detail_tab">
+                                <div id="magzine_detail_tab_content">
+                                    <div id="magazine_brief_area">
+                                        <div id="magazine_cover_wrapper"></div>
+                                        <div id="magazine_brief_text">
+                                            <span id="magazine_brief_container">asdfaflasdfoaihelknalsdhfaoie</span>
+                                        </div>
+                                        <div id="begin_read_button_wrapper" class="btn_wrapper">
+                                            <span class="wrapped_btn">开始阅读</span>
+                                        </div>
+                                    </div>
+                                    <div id="magazine_historical_list">
+                                        <div id="one_magazine_paging_list">
+                                            <div id="onemaga_paging_list_content">
+                                                <div class="maga_vol_item" id="dlwl_vol_18">
+                                                    <div class="btn_wrapper">
+                                                        <span class="wrapped_btn">第十八期</span>
+                                                    </div>
+                                                </div>
+                                                <div class="maga_vol_item" id="dlwl_vol_19">
+                                                    <div class="btn_wrapper">
+                                                        <span class="wrapped_btn">第十九期</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <nav>
+                                                <ul class="pagination" id="paging_list">
+                                                    <li><a href="#" class="active">&laquo;</a></li>
+                                                    <li><a href="#">1</a></li>
+                                                    <li><a href="#">&raquo;</a></li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer_area" class="standard_width">
+            <div class="bottom_btn_wrapper">
+                <span class="bottom_btn">我要投稿</span>
+            </div>
+            <div class="bottom_btn_wrapper">
+                <span class="bottom_btn">关于我们</span>
+            </div>
+            <div class="bottom_btn_wrapper">
+                <span class="bottom_btn">联系我们</span>
+            </div>
+            <div class="bottom_btn_wrapper">
+                <span class="bottom_btn">意见反馈</span>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
