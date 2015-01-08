@@ -14,7 +14,7 @@ class IndexAction extends Action {
 	private function succ($msg) {
 		return json_encode(array('success' => true, 'message' => $msg));
 	}
-	
+		
 	/* 用户模块 */
 	public function login() {
 		$username = strval($_REQUEST['username']);
@@ -42,16 +42,23 @@ class IndexAction extends Action {
 	}
 	public function register() {
 		$username = strval($_REQUEST['username']);
-		$password = strval($_REQUEST['password']);
+		$password = sha1(strval($_REQUEST['password']));
+		$invite = strval($_REQUEST['invite']);
 		if (!$username) {
 			return $this->fail('用户名不能为空');
 		}
 		if (!$password) {
 			return $this->fail('密码不能为空');
 		}
+		if (!$invite) {
+			return $this->fail('邀请码不能为空');
+		}
 		if (M("User")->where(array('username' => $username))->count() > 0) {
 			return $this->fail('用户名已存在');
-		} elseif (M("User")->add(array('username' => $username, 'password' => sha1($password)))) {
+		} elseif (!M("Invitecode")->where(array('code' => $invite, 'used' => 0))
+			->save(array('used' => 1, 'usedtime' => array('exp', 'CURRENT_TIMESTAMP'), 'useduser' => $username))) {
+			return $this->fail('邀请码不正确');
+		} elseif (M("User")->add(array('username' => $username, 'password' => $password))) {
 			$this->login();
 			return $this->succ('注册成功');
 		} else {
