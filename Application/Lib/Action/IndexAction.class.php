@@ -7,12 +7,13 @@ class IndexAction extends Action {
         $class  =   new ReflectionClass($module);
         if ($class->hasMethod($action)) {
             $method =   $class->getMethod($action);
-            if($method->isPublic())
+            if($method->isPublic()) {
                 echo $this->$action();
-            return;
+                return;
+            }
         }
         redirect('index.html');
-    }	
+    }
     private function fail($msg) {
         return json_encode(array('success' => false, 'message' => $msg), JSON_UNESCAPED_UNICODE);
     }
@@ -47,7 +48,7 @@ class IndexAction extends Action {
     }
     public function register() {
         $username = strval($_REQUEST['username']);
-        $password = sha1(strval($_REQUEST['password']));
+        $password = strval($_REQUEST['password']);
         $invite = strval($_REQUEST['invite']);
         if (!$username) {
             return $this->fail('用户名不能为空');
@@ -58,16 +59,21 @@ class IndexAction extends Action {
         if (!$invite) {
             return $this->fail('邀请码不能为空');
         }
+        M()->startTrans();
         if (M("User")->where(array('username' => $username))->count() > 0) {
             return $this->fail('用户名已存在');
-        } elseif (!M("Invitecode")->where(array('code' => $invite, 'used' => 0))->save(array('used' => 1, 'usedtime' => array('exp', 'CURRENT_TIMESTAMP'), 'useduser' => $username))) {
+        } 
+        if (!M("Invitecode")->where(array('code' => $invite, 'used' => 0))->save(array('used' => 1, 'usedtime' => array('exp', 'CURRENT_TIMESTAMP'), 'useduser' => $username))) {
+            M()->rollback();
             return $this->fail('邀请码不正确');
-        } elseif (M("User")->add(array('username' => $username, 'password' => $password))) {
+        }
+        if (M("User")->add(array('username' => $username, 'password' => sha1($password)))) {
+            M()->commit();
             $this->login();
             return $this->succ('注册成功');
-        } else {
-            return $this->fail('未知错误');
-        }
+        } 
+        M()->rollback();
+        return $this->fail('未知错误');
     }
     public function updateuser() {
         $update = array();
